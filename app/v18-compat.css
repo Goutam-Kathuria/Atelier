@@ -1,0 +1,705 @@
+/* V18 compatibility restore — intentionally limited to requested legacy visuals.
+   Do not add unrelated V18 patch rules here. */
+
+.route-screen-earth {
+  background: transparent !important;
+  min-height: 100svh !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(500px, 48vw) !important;
+  align-items: center !important;
+  gap: clamp(28px, 6vw, 96px) !important;
+  padding: clamp(96px, 11vh, 132px) clamp(30px, 7vw, 112px) 8vh !important;
+}
+.route-screen-earth .route-screen-media {
+  z-index: -5 !important;
+  opacity: 0.32 !important;
+  background-image: url("https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=2400&q=88") !important;
+  background-position: center !important;
+  background-size: cover !important;
+}
+.route-screen-earth .route-screen-media img {
+  display: none !important;
+}
+.route-screen-earth .route-screen-shade {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 6, 18, 0.76),
+    rgba(2, 6, 18, 0.18) 65%,
+    rgba(2, 6, 18, 0.54)
+  ) !important;
+}
+.route-screen-earth .route-screen-content {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  align-self: center !important;
+  max-width: 660px !important;
+  margin: 0 !important;
+  z-index: 4 !important;
+}
+.route-screen-earth .route-screen-content h1 {
+  font-size: clamp(60px, 7vw, 112px) !important;
+  line-height: 0.84 !important;
+  max-width: 660px !important;
+  margin: 14px 0 26px !important;
+}
+.route-screen-earth .route-screen-model {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  position: relative !important;
+  width: 100% !important;
+  height: min(72vh, 760px) !important;
+  right: auto !important;
+  top: auto !important;
+  transform: none !important;
+  align-self: center !important;
+  justify-self: stretch !important;
+  z-index: 4 !important;
+  display: grid !important;
+  place-items: center !important;
+}
+.route-screen-earth .route-screen-model .scene-deferred,
+.route-screen-earth .route-screen-model .scene-canvas {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  background: transparent !important;
+}
+.route-screen-earth .route-earth-poster {
+  z-index: 0 !important;
+  border: 1px solid rgba(101, 232, 255, 0.12) !important;
+  background:
+    radial-gradient(
+      circle at 50% 48%,
+      rgba(70, 218, 255, 0.12),
+      transparent 44%
+    ),
+    url("https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=2400&q=88")
+      center/cover no-repeat !important;
+  opacity: 0.14 !important;
+}
+.route-screen-earth .route-screen-model .scene-deferred {
+  position: relative !important;
+  z-index: 2 !important;
+}
+@media (max-width: 1100px) {
+.route-screen-earth {
+    grid-template-columns: minmax(0, 1fr) minmax(420px, 45vw) !important;
+  }
+}
+
+@media (max-width: 900px) {
+.route-screen-earth {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    padding-top: 110px !important;
+  }
+.route-screen-earth .route-screen-content {
+    max-width: 680px !important;
+  }
+.route-screen-earth .route-screen-model {
+    width: 88vw !important;
+    height: 72vw !important;
+    margin: 0 auto !important;
+  }
+}
+
+.route-screen-earth .route-earth-poster {
+  display: none !important;
+}
+.route-screen-earth .route-screen-model,
+.route-screen-earth .route-screen-model .scene-deferred,
+.route-screen-earth .route-screen-model .scene-canvas {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.route-screen-earth .route-screen-model {
+  place-items: center !important;
+  overflow: visible !important;
+}
+.route-screen-earth .route-screen-model .scene-canvas canvas {
+  background: transparent !important;
+}
+.route-screen-earth .route-earth-poster {
+  display: none !important;
+}
+.route-screen-earth .route-screen-model {
+  position: relative !important;
+  display: grid !important;
+  place-items: center !important;
+  width: 100% !important;
+  height: min(72vh, 760px) !important;
+  background: transparent !important;
+}
+.route-screen-earth .route-screen-model .scene-deferred,
+.route-screen-earth .route-screen-model .scene-canvas {
+  width: 100% !important;
+  height: 100% !important;
+  background: transparent !important;
+}
+.route-screen-earth .route-screen-shade {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 6, 18, 0.76),
+    rgba(2, 6, 18, 0.14) 64%,
+    rgba(2, 6, 18, 0.48)
+  ) !important;
+}
+.route-screen-media img,
+.collection-background-layer,
+.collection-card-media img,
+.media-interlude-image,
+.media-interlude-video {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+.route-screen-media img {
+  transform: scale(1.025) !important;
+  filter: none !important;
+}
+.lux-hero,
+.space-hero,
+.media-interlude,
+.route-screen {
+  isolation: isolate;
+}
+.lux-hero-copy,
+.space-stars-copy,
+.media-interlude-copy,
+.route-screen-content {
+  text-wrap: balance;
+}
+.route-screen-earth .route-earth-poster {
+  background-image:
+    radial-gradient(
+      circle at 48% 45%,
+      rgba(44, 211, 255, 0.16),
+      transparent 38%
+    ),
+    var(--space-route-image) !important;
+}
+.footer-marquee {
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  margin-bottom: clamp(54px, 8vh, 96px) !important;
+  opacity: 0.26 !important;
+  transform: none !important;
+}
+.footer-marquee-track {
+  display: flex !important;
+  width: max-content !important;
+  align-items: baseline !important;
+  animation: v17-footer-marquee 52s linear infinite !important;
+  will-change: transform !important;
+}
+.footer-marquee-track span {
+  display: block !important;
+  flex: 0 0 auto !important;
+  padding-right: clamp(38px, 5vw, 88px) !important;
+}
+.lux-object .jewelry-stage,
+.lux-object .scene-canvas,
+.lux-object .scene-luxury,
+.lux-object .scene-canvas canvas,
+.lux-cta .cta-scene,
+.lux-cta .cta-scene .scene-deferred,
+.lux-cta .cta-scene .scene-canvas,
+.lux-cta .cta-scene .scene-luxury,
+.lux-cta .cta-scene .scene-canvas canvas {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.lux-object .scene-canvas,
+.lux-cta .cta-scene .scene-canvas {
+  overflow: visible !important;
+  transform: translateY(-6%) !important;
+}
+.lux-object .scene-canvas canvas,
+.lux-cta .cta-scene .scene-canvas canvas {
+  transform: translateY(-2%) scale(1.02) !important;
+}
+.lux-cta .lux-button {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 54px !important;
+  padding: 0 24px !important;
+  background: #fffaf1 !important;
+  color: #171411 !important;
+  border: 1px solid rgba(23, 20, 17, 0.14) !important;
+  box-shadow: 0 12px 30px rgba(34, 27, 19, 0.1) !important;
+}
+.lux-cta .lux-button:hover {
+  background: #171411 !important;
+  color: #fffaf1 !important;
+  transform: translateY(-3px) !important;
+}
+@media (max-width: 900px) {
+.lux-object .scene-canvas,
+  .lux-cta .cta-scene .scene-canvas {
+    transform: translateY(-3%) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+.footer-marquee-track {
+    animation: none !important;
+  }
+}
+
+.lux-cta > div:first-child {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: clamp(28px, 3.5vw, 48px) !important;
+}
+.lux-cta > div:first-child .eyebrow {
+  margin: 0 !important;
+}
+.lux-cta > div:first-child h2 {
+  margin: 0 !important;
+}
+.lux-cta .lux-button,
+.lux-cta .lux-button:hover,
+.lux-cta .lux-button:focus-visible {
+  background: #fffaf1 !important;
+  color: #171411 !important;
+  border-color: rgba(23, 20, 17, 0.14) !important;
+  box-shadow: 0 12px 30px rgba(34, 27, 19, 0.1) !important;
+}
+.lux-cta .lux-button:hover {
+  transform: translateY(-2px) !important;
+}
+.route-screen-content .route-actions {
+  align-items: center !important;
+}
+.route-screen-content .route-detail-strip > div {
+  min-width: 0 !important;
+}
+.route-screen-content .route-detail-strip b {
+  text-wrap: balance !important;
+}
+.route-screen-contact .route-screen-content {
+  max-width: 700px !important;
+}
+.route-screen-contact .route-screen-aside {
+  align-self: center !important;
+  width: min(560px, 42vw) !important;
+  max-height: 78vh !important;
+  overflow: visible !important;
+  padding-right: 0 !important;
+}
+@media (max-width: 900px) {
+.route-screen-contact .route-screen-aside {
+    width: min(88vw, 620px) !important;
+    max-height: none !important;
+  }
+}
+
+.route-screen-aside {
+  gap: 16px !important;
+}
+.route-next-action {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: end;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.route-screen-luxury .route-next-action {
+  border-top-color: rgba(255, 255, 255, 0.16);
+}
+.route-next-action > div {
+  min-width: 0;
+}
+.route-next-action span {
+  display: block;
+  font: 9px monospace;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+.route-next-action p {
+  margin: 5px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: 0.66;
+}
+.route-next-action .lux-button,
+.route-next-action .space-button {
+  min-height: 44px;
+  white-space: nowrap;
+}
+.space-route-module {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(110, 234, 255, 0.12);
+}
+.space-route-selector {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: thin;
+}
+.space-route-selector button {
+  flex: 0 0 auto;
+  padding: 8px 9px;
+  border: 1px solid rgba(110, 234, 255, 0.12);
+  background: rgba(110, 234, 255, 0.025);
+  color: inherit;
+  border-radius: 7px;
+  font: 8px monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.62;
+  text-align: left;
+}
+.space-route-selector button:hover,
+.space-route-selector button.active {
+  opacity: 1;
+  border-color: rgba(110, 234, 255, 0.38);
+  background: rgba(110, 234, 255, 0.08);
+}
+.space-route-detail {
+  margin-top: 10px;
+  padding: 13px 14px;
+  border: 1px solid rgba(110, 234, 255, 0.1);
+  background: rgba(110, 234, 255, 0.025);
+  border-radius: 9px;
+}
+.space-route-detail span {
+  display: block;
+  font: 8px monospace;
+  letter-spacing: 0.13em;
+  opacity: 0.46;
+}
+.space-route-detail strong {
+  display: block;
+  margin-top: 6px;
+  font:
+    500 16px/1.05 Arial,
+    sans-serif;
+}
+.space-route-detail p {
+  margin: 7px 0 0;
+  font-size: 11px;
+  line-height: 1.5;
+  opacity: 0.6;
+}
+.lux-cta > div:first-child {
+  gap: 0 !important;
+}
+.lux-cta > div:first-child h2 {
+  margin: 22px 0 0 !important;
+}
+.lux-cta > div:first-child .lux-button {
+  margin-top: 42px !important;
+}
+.lux-cta .lux-button:hover,
+.lux-cta .lux-button:focus-visible,
+.lux-cta .lux-button:active {
+  background: #fffaf1 !important;
+  color: #171411 !important;
+  border-color: rgba(23, 20, 17, 0.14) !important;
+}
+.route-earth-wrap {
+  width: 100%;
+  display: grid;
+  gap: 14px;
+  align-items: center;
+}
+.route-next-action-space {
+  margin-top: 0 !important;
+  border-top-color: rgba(110, 234, 255, 0.16) !important;
+}
+.route-screen-earth .route-next-action-space {
+  color: #e5fbff;
+}
+.route-next-action {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 22px;
+  margin-top: 32px;
+}
+.route-next-action > .space-button,
+.route-next-action > .lux-button {
+  width: 100%;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+@media (max-width: 900px) {
+.route-next-action {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+.route-next-action .lux-button,
+  .route-next-action .space-button {
+    justify-self: start;
+  }
+.route-earth-wrap {
+    width: 100%;
+  }
+}
+
+
+/* V18 SPACE GLOBAL BACKDROP — restored exactly for the public space experience. */
+.space-global-earth {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 6, 18, 0.88) 0%,
+      rgba(2, 6, 18, 0.6) 42%,
+      rgba(2, 6, 18, 0.18) 72%,
+      rgba(2, 6, 18, 0.62) 100%
+    ),
+    url("https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1800&q=78")
+      center / cover no-repeat !important;
+  opacity: 0.96 !important;
+}
+
+/* /space/explore — V18 had the dedicated Earth 3D model without a poster/image behind it. */
+.route-screen-earth .route-earth-poster {
+  background: transparent !important;
+  background-image: none !important;
+  opacity: 0 !important;
+  border: 0 !important;
+}
+
+/* V18 CMS scrolling behavior. Desktop: fixed rail + independently scrolling rail. */
+@media (min-width: 801px) {
+  .admin-studio-page {
+    display: block !important;
+    min-height: 100svh !important;
+  }
+  .admin-studio-page .admin-rail {
+    position: fixed !important;
+    inset: 0 auto 0 0 !important;
+    width: 260px !important;
+    height: 100svh !important;
+    overflow-y: auto !important;
+    z-index: 100 !important;
+  }
+  .admin-studio-page .admin-main {
+    margin-left: 260px !important;
+    min-height: 100svh !important;
+  }
+}
+
+/* V18 mobile CMS scrolling/navigation. */
+@media (max-width: 800px) {
+  .admin-studio-page .admin-rail {
+    position: sticky !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    transform: none !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 16px !important;
+    padding: 12px 16px !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    z-index: 50 !important;
+  }
+  .admin-studio-page .admin-rail .rail-status,
+  .admin-studio-page .admin-rail .rail-bottom { display: none !important; }
+  .admin-studio-page .admin-rail .admin-logo { flex: 0 0 auto; margin: 0 !important; }
+  .admin-studio-page .admin-rail nav {
+    display: flex !important;
+    flex: 1 1 auto;
+    gap: 6px !important;
+    overflow-x: auto;
+    padding: 0 !important;
+  }
+  .admin-studio-page .admin-rail nav p { display: none !important; }
+  .admin-studio-page .admin-rail nav button { flex: 0 0 auto; white-space: nowrap; }
+  .admin-studio-page .admin-main { margin-left: 0 !important; padding: 0 16px 32px !important; }
+  .admin-studio-page .studio-header { top: 0 !important; }
+}
+
+
+/* User-requested Explore cleanup: keep the Earth GLB, remove every 2D image layer behind it. */
+.route-screen-earth .route-screen-media,
+.route-screen-earth .route-earth-poster {
+  display: none !important;
+  background: transparent !important;
+  background-image: none !important;
+  opacity: 0 !important;
+}
+.route-screen-earth .route-screen-shade {
+  background: transparent !important;
+}
+
+/* V18 screen art-direction — restored for Mission / Technology / other route screens. */
+.route-screen-space:not(.route-screen-earth) .route-screen-content h1 {
+  max-width: 760px !important;
+  font-size: clamp(62px, 8vw, 126px) !important;
+}
+.route-detail-card {
+  width: min(100%, 520px) !important;
+  min-height: 330px !important;
+  padding: clamp(28px, 4vw, 52px) !important;
+  border: 1px solid rgba(126, 228, 255, 0.24) !important;
+  background: linear-gradient(
+    145deg,
+    rgba(6, 12, 28, 0.72),
+    rgba(6, 9, 18, 0.32)
+  ) !important;
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.22) !important;
+  backdrop-filter: blur(6px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+.route-screen-luxury .route-detail-card {
+  border-color: rgba(184, 142, 75, 0.24) !important;
+  background: linear-gradient(
+    145deg,
+    rgba(250, 246, 237, 0.78),
+    rgba(239, 231, 216, 0.58)
+  ) !important;
+  box-shadow: 0 34px 90px rgba(50, 37, 21, 0.12) !important;
+  color: #1a1714 !important;
+}
+.route-detail-card-top {
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
+  font: 10px monospace !important;
+  letter-spacing: 0.18em !important;
+  opacity: 0.74 !important;
+}
+.route-detail-line {
+  width: 100% !important;
+  height: 1px !important;
+  margin: 34px 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* V18 CTA spacing — keep the 09 section breathing exactly as before. */
+.lux-cta > div:first-child {
+  gap: 0 !important;
+}
+.lux-cta > div:first-child h2 {
+  margin: 22px 0 0 !important;
+}
+.lux-cta > div:first-child .lux-button {
+  margin-top: 42px !important;
+}
+.lux-cta .lux-button:hover,
+.lux-cta .lux-button:focus-visible,
+.lux-cta .lux-button:active {
+  background: #fffaf1 !important;
+  color: #171411 !important;
+  border-color: rgba(23, 20, 17, 0.14) !important;
+}
+
+/* =========================================================
+   CONTACT FORM — FINAL SPACING / CONTROL POLISH
+   ========================================================= */
+
+.route-screen-contact .contact-form textarea {
+  min-height: 86px !important;
+  height: 86px !important;
+  padding-bottom: 10px !important;
+}
+
+.route-screen-contact .contact-form-submit {
+  margin-top: 2px !important;
+  gap: 8px !important;
+}
+
+.route-screen-contact .contact-form-submit .lux-button {
+  width: 220px !important;
+  min-width: 220px !important;
+  max-width: 220px !important;
+  justify-self: start !important;
+}
+
+.luxury-select {
+  position: relative;
+  width: 100%;
+}
+
+.luxury-select-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 244, 226, 0.28);
+  background: transparent;
+  color: #fff4e2;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.luxury-select-arrow {
+  color: var(--lux-gold);
+  transition: transform 0.25s ease;
+}
+
+.luxury-select-trigger.is-open .luxury-select-arrow {
+  transform: rotate(180deg);
+}
+
+.luxury-select-menu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 10px);
+  z-index: 50;
+  padding: 6px;
+  background: rgba(24, 20, 16, 0.97);
+  border: 1px solid rgba(255, 244, 226, 0.16);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.28);
+}
+
+.luxury-select-menu button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 14px;
+  border: 0;
+  background: transparent;
+  color: rgba(255, 244, 226, 0.72);
+  font: 14px/1.4 var(--lux-body);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.luxury-select-menu button:hover,
+.luxury-select-menu button.is-selected {
+  background: rgba(214, 173, 97, 0.12);
+  color: #fff4e2;
+}
+
+.luxury-select-menu button.is-selected {
+  color: var(--lux-gold);
+}

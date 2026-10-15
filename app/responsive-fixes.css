@@ -1,0 +1,1890 @@
+/* Final, consolidated viewport fixes for the Luxury and Space experiences. */
+.luxury-page,
+.space-page {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: clip !important;
+}
+.luxury-page img,
+.luxury-page video,
+.luxury-page canvas,
+.space-page img,
+.space-page video,
+.space-page canvas {
+  max-width: 100%;
+}
+.luxury-page section,
+.space-page section,
+.luxury-page article,
+.space-page article,
+.luxury-page header,
+.space-page header {
+  min-width: 0;
+}
+
+/* Keep the animated video slot inside the hero text line on narrow screens. */
+.luxury-page .luxury-hero-video-slot {
+  max-width: 100% !important;
+}
+
+/* Keep the main content columns shrinkable so long copy and media do not collide. */
+.luxury-page .story-grid,
+.luxury-page .lux-object,
+.luxury-page .lux-cta,
+.space-page .space-cta,
+.space-page .space-command {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+.luxury-page .story-grid {
+  grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.85fr) !important;
+}
+.luxury-page .lux-object {
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr) !important;
+  column-gap: clamp(28px, 5vw, 80px) !important;
+}
+.luxury-page .lux-object .object-copy,
+.luxury-page .lux-object .jewelry-stage,
+.luxury-page .lux-cta > div,
+.space-page .space-cta > div,
+.space-page .planet-copy {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+.luxury-page .lux-object .scene-canvas,
+.luxury-page .lux-cta .cta-scene,
+.luxury-page .lux-cta .cta-scene .scene-canvas,
+.space-page .space-cta > div:first-child,
+.space-page .space-cta > div:first-child .scene-canvas {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+}
+.luxury-page .lux-chapters .chapter-stack {
+  width: 100% !important;
+  min-width: 0 !important;
+}
+.luxury-page .lux-chapters .scene-chapter {
+  grid-template-columns: 72px minmax(0, 1fr) !important;
+}
+.luxury-page .stats-grid,
+.space-page .stats-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+.space-page .planet-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+.space-page .mission-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+.space-page .tech-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+.space-page .planet-card,
+.space-page .mission-card,
+.space-page .tech-card {
+  min-width: 0 !important;
+  overflow-wrap: anywhere;
+}
+
+/* Collection and material-reveal sequences: avoid clipping copy or controls on short viewports. */
+.luxury-page .lux-collection-motion .collection-sticky {
+  min-height: 100svh !important;
+}
+.luxury-page .collection-card {
+  min-width: 0 !important;
+}
+.luxury-page .collection-card-copy h3 {
+  overflow-wrap: anywhere;
+}
+.luxury-page .image-reveal-section .reveal-title,
+.space-page .image-reveal-section .reveal-title {
+  min-width: 0 !important;
+  max-width: calc(100vw - 12vw) !important;
+}
+.luxury-page .image-reveal-section .reveal-panel,
+.space-page .image-reveal-section .reveal-panel {
+  min-width: 0 !important;
+  min-height: 0 !important;
+}
+
+/* Space hero and all supporting content must fit the viewport independently. */
+.space-page .space-hero {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+.space-page .space-hero-minimal {
+  min-width: 0 !important;
+  max-width: calc(100vw - 12vw) !important;
+}
+.space-page .space-hero-minimal h1 {
+  overflow-wrap: anywhere;
+}
+.space-page .space-journey,
+.space-page .planet-section,
+.space-page .mission-section,
+.space-page .space-tech,
+.space-page .space-stats,
+.space-page .space-timeline,
+.space-page .space-cta {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  padding-left: clamp(22px, 6vw, 90px) !important;
+  padding-right: clamp(22px, 6vw, 90px) !important;
+}
+.space-page .space-journey > h2,
+.space-page .planet-section h2,
+.space-page .mission-section h2,
+.space-page .space-tech h2,
+.space-page .space-timeline h2,
+.space-page .space-cta h2 {
+  max-width: 100% !important;
+  overflow-wrap: anywhere;
+}
+.space-page .journey-line {
+  flex-wrap: wrap !important;
+  row-gap: 12px !important;
+}
+.space-page .space-chapters {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+.space-page .timeline {
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+}
+
+/* Header navigation: preserve every link in a scrollable second row rather than compressing labels. */
+@media (max-width: 900px) {
+  .luxury-page > .lux-nav.lux-nav-light {
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    grid-template-rows: auto auto !important;
+    column-gap: 12px !important;
+    row-gap: 8px !important;
+    min-height: 0 !important;
+    padding: 14px 5vw 10px !important;
+  }
+  .luxury-page .lux-nav-light .wordmark {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .luxury-page .lux-nav-light .nav-index {
+    display: none !important;
+  }
+  .luxury-page .lux-nav-light .lux-links {
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    gap: clamp(16px, 4vw, 28px) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 6px 0 5px !important;
+    white-space: nowrap !important;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .luxury-page .lux-nav-light .lux-links::-webkit-scrollbar {
+    display: none;
+  }
+  .luxury-page .lux-nav-light .lux-links a {
+    flex: 0 0 auto !important;
+  }
+
+  .space-page > .space-nav {
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    grid-template-rows: auto auto !important;
+    column-gap: 12px !important;
+    row-gap: 8px !important;
+    min-height: 0 !important;
+    padding: 14px 5vw 10px !important;
+  }
+  .space-page .space-nav .space-mark {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    min-width: 0 !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .space-page .space-nav .signal {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    white-space: nowrap !important;
+    min-height: 34px !important;
+    padding: 0 10px !important;
+  }
+  .space-page .space-nav nav {
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    gap: clamp(14px, 3.5vw, 25px) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 6px 0 5px !important;
+    white-space: nowrap !important;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .space-page .space-nav nav::-webkit-scrollbar {
+    display: none;
+  }
+  .space-page .space-nav nav a {
+    flex: 0 0 auto !important;
+  }
+
+
+
+  .luxury-page .luxury-hero-heading {
+    left: 6vw !important;
+    right: 6vw !important;
+    font-size: clamp(54px, 9.5vw, 88px) !important;
+    line-height: 0.84 !important;
+    letter-spacing: -0.065em !important;
+    overflow-wrap: anywhere;
+  }
+  .luxury-page .luxury-hero-media-line {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    align-items: center !important;
+  }
+  .luxury-page .luxury-hero-video-slot {
+    width: clamp(120px, 27vw, 220px) !important;
+    height: clamp(62px, 14vw, 108px) !important;
+  }
+  .luxury-page .luxury-hero-foot {
+    left: 6vw !important;
+    right: 6vw !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+  }
+  .luxury-page .luxury-hero-foot > p {
+    max-width: min(42ch, 70%) !important;
+    font-size: 14px !important;
+  }
+
+  .luxury-page .story-grid {
+    gap: 36px !important;
+    grid-template-columns: minmax(0, 1fr) minmax(200px, 0.72fr) !important;
+  }
+  .luxury-page .lux-object {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 28px !important;
+  }
+  .luxury-page .lux-object .scene-canvas {
+    height: min(52vw, 440px) !important;
+    min-height: 0 !important;
+    margin-top: 0 !important;
+  }
+  .luxury-page .lux-chapters .scene-chapter {
+    grid-template-columns: 58px minmax(0, 1fr) !important;
+    gap: 22px !important;
+  }
+  .luxury-page .stats-grid,
+  .space-page .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .space-page .planet-grid,
+  .space-page .mission-grid,
+  .space-page .tech-grid,
+  .space-page .space-chapters {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .space-page .space-hero {
+    height: clamp(680px, calc(100svh - 70px), 820px) !important;
+    min-height: clamp(680px, calc(100svh - 70px), 820px) !important;
+  }
+  .space-page .space-hero > .scene-deferred {
+    left: 4vw !important;
+    top: 52% !important;
+    width: 92vw !important;
+    height: min(56vh, 470px) !important;
+    transform: translateY(-34%) !important;
+  }
+  .space-page .space-hero-minimal {
+    left: 6vw !important;
+    top: 64px !important;
+    width: 88vw !important;
+    max-width: 88vw !important;
+  }
+  .space-page .space-hero-minimal h1 {
+    font-size: clamp(58px, 10.5vw, 86px) !important;
+    line-height: 0.86 !important;
+  }
+  .space-page .coordinates {
+    display: none !important;
+  }
+  .space-page .flight-readout {
+    right: 6vw !important;
+    bottom: 20px !important;
+    top: auto !important;
+  }
+
+  .luxury-page .lux-collection-motion {
+    height: 275svh !important;
+    min-height: 275svh !important;
+  }
+  .luxury-page .collection-title {
+    top: 11vh !important;
+    left: 6vw !important;
+    width: 38vw !important;
+  }
+  .luxury-page .collection-title h2 {
+    font-size: clamp(44px, 6vw, 64px) !important;
+  }
+  .luxury-page .collection-scene-copy {
+    top: 11vh !important;
+    right: 6vw !important;
+    width: 38vw !important;
+  }
+  .luxury-page .collection-track {
+    left: 42vw !important;
+    top: 28vh !important;
+    height: 58vh !important;
+    transform: translate3d(calc(var(--collection-progress, 0) * -230vw), 0, 0) !important;
+  }
+  .luxury-page .collection-card {
+    flex-basis: 42vw !important;
+    height: 58vh !important;
+  }
+  .luxury-page .image-reveal-section {
+    height: 225svh !important;
+    min-height: 225svh !important;
+  }
+  .luxury-page .image-reveal-section .reveal-title,
+  .space-page .image-reveal-section .reveal-title {
+    top: 7vh !important;
+    left: 6vw !important;
+    width: 84vw !important;
+    max-width: 84vw !important;
+  }
+  .luxury-page .image-reveal-section .reveal-panels,
+  .space-page .image-reveal-section .reveal-panels {
+    left: 6vw !important;
+    right: 6vw !important;
+    top: 38vh !important;
+    bottom: 17vh !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  .space-page .space-journey,
+  .space-page .planet-section,
+  .space-page .mission-section,
+  .space-page .space-tech,
+  .space-page .space-stats,
+  .space-page .space-timeline,
+  .space-page .space-cta,
+  .luxury-page .lux-story,
+  .luxury-page .lux-object,
+  .luxury-page .lux-chapters,
+  .luxury-page .lux-stats,
+  .luxury-page .lux-cta {
+    padding-top: clamp(68px, 10vw, 100px) !important;
+    padding-bottom: clamp(68px, 10vw, 100px) !important;
+  }
+  .space-page .space-journey > p {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .space-page .timeline {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 18px 12px !important;
+  }
+  .space-page .timeline div {
+    min-height: 105px !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid rgba(103, 218, 255, 0.2) !important;
+  }
+  .space-page .space-cta > div:first-child,
+  .luxury-page .lux-cta .cta-scene {
+    height: min(62vw, 400px) !important;
+    min-height: 0 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .luxury-page > .lux-nav.lux-nav-light,
+  .space-page > .space-nav {
+    padding-left: 5vw !important;
+    padding-right: 5vw !important;
+  }
+  .luxury-page .lux-nav-light .wordmark,
+  .space-page .space-nav .space-mark {
+    font-size: 12px !important;
+    letter-spacing: 0.12em !important;
+  }
+  .luxury-page .lux-nav-light .lux-links a,
+  .space-page .space-nav nav a {
+    font-size: 9px !important;
+    letter-spacing: 0.12em !important;
+  }
+  .space-page .space-nav .signal {
+    max-width: 34vw !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    font-size: 8px !important;
+  }
+
+
+
+  .luxury-page .luxury-hero-topline {
+    inset: 20px 5vw auto !important;
+    gap: 14px !important;
+    font-size: 8px !important;
+    letter-spacing: 0.12em !important;
+  }
+  .luxury-page .luxury-hero-topline span:last-child {
+    text-align: right !important;
+  }
+  .luxury-page .luxury-hero-heading {
+    left: 5vw !important;
+    right: 5vw !important;
+    font-size: clamp(44px, 12.2vw, 68px) !important;
+    line-height: 0.86 !important;
+    letter-spacing: -0.07em !important;
+  }
+  .luxury-page .luxury-hero-media-line {
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+  }
+  .luxury-page .luxury-hero-media-line > span:first-child {
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+  }
+  .luxury-page .luxury-hero-video-slot {
+    width: clamp(82px, 25vw, 126px) !important;
+    height: clamp(48px, 14vw, 72px) !important;
+    flex: 0 0 auto !important;
+  }
+  .luxury-page .luxury-hero-foot {
+    left: 5vw !important;
+    right: 5vw !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  .luxury-page .luxury-hero-foot > p {
+    max-width: 34ch !important;
+    width: 100% !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+  }
+  .luxury-page .luxury-hero-foot a {
+    font-size: 8px !important;
+    letter-spacing: 0.14em !important;
+  }
+
+  .luxury-page .story-grid,
+  .luxury-page .lux-object,
+  .luxury-page .lux-cta,
+  .space-page .space-cta {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 30px !important;
+  }
+  .luxury-page .lux-story,
+  .luxury-page .lux-object,
+  .luxury-page .lux-chapters,
+  .luxury-page .lux-stats,
+  .luxury-page .lux-cta,
+  .space-page .space-journey,
+  .space-page .planet-section,
+  .space-page .mission-section,
+  .space-page .space-tech,
+  .space-page .space-stats,
+  .space-page .space-timeline,
+  .space-page .space-cta {
+    padding-left: 6vw !important;
+    padding-right: 6vw !important;
+  }
+  .luxury-page .lux-story {
+    min-height: 0 !important;
+  }
+  .luxury-page .lux-story h2,
+  .luxury-page .lux-object .object-copy h2,
+  .luxury-page .lux-cta h2,
+  .space-page .space-journey h2,
+  .space-page .planet-section h2,
+  .space-page .mission-section h2,
+  .space-page .space-tech h2,
+  .space-page .space-timeline h2,
+  .space-page .space-cta h2 {
+    font-size: clamp(40px, 11vw, 64px) !important;
+    line-height: 0.92 !important;
+    overflow-wrap: anywhere;
+  }
+  .luxury-page .lux-object .jewelry-stage,
+  .luxury-page .lux-object .scene-canvas {
+    width: 100% !important;
+    height: min(90vw, 370px) !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+  }
+  .luxury-page .lux-chapters .chapter-stack {
+    margin-top: 36px !important;
+  }
+  .luxury-page .lux-chapters .scene-chapter {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 14px !important;
+    padding: 36px 0 !important;
+  }
+  .luxury-page .stats-grid,
+  .space-page .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px 14px !important;
+  }
+  .luxury-page .stats-grid strong,
+  .space-page .stats-grid strong {
+    font-size: clamp(34px, 9vw, 52px) !important;
+    overflow-wrap: anywhere;
+  }
+
+  .luxury-page .collection-title {
+    top: 10vh !important;
+    left: 6vw !important;
+    width: 88vw !important;
+  }
+  .luxury-page .collection-title h2 {
+    font-size: clamp(46px, 12vw, 64px) !important;
+    margin: 10px 0 12px !important;
+  }
+  .luxury-page .collection-title p:last-child {
+    max-width: 34ch !important;
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+  }
+  .luxury-page .collection-scene-copy {
+    display: none !important;
+  }
+  .luxury-page .collection-track {
+    left: 6vw !important;
+    top: 49vh !important;
+    height: 36vh !important;
+    transform: translate3d(calc(var(--collection-progress, 0) * -380vw), 0, 0) !important;
+    gap: 12px !important;
+  }
+  .luxury-page .collection-card {
+    flex-basis: 82vw !important;
+    height: 36vh !important;
+  }
+  .luxury-page .collection-card-copy {
+    left: 14px !important;
+    right: 14px !important;
+    bottom: 14px !important;
+  }
+  .luxury-page .collection-card-copy h3 {
+    font-size: 25px !important;
+  }
+  .luxury-page .collection-contact {
+    left: 6vw !important;
+    bottom: 22px !important;
+    gap: 0 !important;
+  }
+  .luxury-page .collection-contact > span {
+    display: none !important;
+  }
+  .luxury-page .collection-contact .lux-button {
+    font-size: 9px !important;
+  }
+  .luxury-page .collection-meter {
+    right: 6vw !important;
+    bottom: 25px !important;
+    width: 30vw !important;
+    gap: 8px !important;
+  }
+  .luxury-page .collection-meter b {
+    font-size: 8px !important;
+    white-space: nowrap;
+  }
+
+  .luxury-page .image-reveal-section,
+  .space-page .image-reveal-section {
+    height: 235svh !important;
+    min-height: 235svh !important;
+  }
+  .luxury-page .image-reveal-section .reveal-title,
+  .space-page .image-reveal-section .reveal-title {
+    top: 7vh !important;
+    left: 6vw !important;
+    width: 88vw !important;
+    max-width: 88vw !important;
+  }
+  .luxury-page .image-reveal-section .reveal-title h2,
+  .space-page .image-reveal-section .reveal-title h2 {
+    font-size: clamp(38px, 10.5vw, 58px) !important;
+    line-height: 0.88 !important;
+    margin: 10px 0 12px !important;
+  }
+  .luxury-page .image-reveal-section .reveal-title p:not(.eyebrow),
+  .space-page .image-reveal-section .reveal-title p:not(.eyebrow) {
+    font-size: 12px !important;
+    line-height: 1.42 !important;
+    max-width: 38ch !important;
+  }
+  .luxury-page .image-reveal-section .reveal-panels,
+  .space-page .image-reveal-section .reveal-panels {
+    left: 6vw !important;
+    right: 6vw !important;
+    top: 42vh !important;
+    bottom: 18vh !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+  .luxury-page .image-reveal-section .reveal-panel-index,
+  .space-page .image-reveal-section .reveal-panel-index {
+    top: 9px !important;
+    left: 9px !important;
+    font-size: 8px !important;
+  }
+  .luxury-page .image-reveal-section .reveal-section-nav,
+  .space-page .image-reveal-section .reveal-section-nav {
+    left: 6vw !important;
+    right: auto !important;
+    bottom: 8vh !important;
+    gap: 7px !important;
+  }
+  .luxury-page .image-reveal-section .reveal-section-nav > span,
+  .space-page .image-reveal-section .reveal-section-nav > span {
+    display: none !important;
+  }
+  .luxury-page .image-reveal-section .reveal-section-nav .lux-button,
+  .space-page .image-reveal-section .reveal-section-nav .space-button {
+    font-size: 8px !important;
+    padding: 0 0 6px !important;
+    letter-spacing: 0.1em !important;
+  }
+  .luxury-page .image-reveal-section .reveal-progress,
+  .space-page .image-reveal-section .reveal-progress {
+    right: 6vw !important;
+    bottom: 4vh !important;
+    gap: 8px !important;
+  }
+  .luxury-page .image-reveal-section .reveal-progress span,
+  .space-page .image-reveal-section .reveal-progress span {
+    width: 18vw !important;
+  }
+
+  .space-page .space-hero {
+    height: clamp(680px, calc(100svh - 68px), 780px) !important;
+    min-height: clamp(680px, calc(100svh - 68px), 780px) !important;
+  }
+  .space-page .space-hero-minimal {
+    top: 56px !important;
+    left: 6vw !important;
+    width: 88vw !important;
+    max-width: 88vw !important;
+  }
+  .space-page .space-hero-minimal h1 {
+    font-size: clamp(54px, 13vw, 78px) !important;
+    line-height: 0.88 !important;
+  }
+  .space-page .space-hero > .scene-deferred {
+    left: 2vw !important;
+    top: 51% !important;
+    width: 96vw !important;
+    height: min(52vh, 390px) !important;
+    transform: translateY(-24%) !important;
+  }
+  .space-page .flight-readout {
+    right: 6vw !important;
+    bottom: 18px !important;
+    gap: 4px !important;
+    font-size: 7px !important;
+  }
+  .space-page .flight-readout strong {
+    font-size: 26px !important;
+  }
+  .space-page .space-journey,
+  .space-page .planet-section,
+  .space-page .mission-section,
+  .space-page .space-tech,
+  .space-page .space-stats,
+  .space-page .space-timeline,
+  .space-page .space-cta {
+    padding-top: 68px !important;
+    padding-bottom: 68px !important;
+  }
+  .space-page .space-chapters,
+  .space-page .planet-grid,
+  .space-page .mission-grid,
+  .space-page .tech-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 14px !important;
+  }
+  .space-page .space-chapters .scene-chapter {
+    min-height: 0 !important;
+    padding: 24px 20px !important;
+    gap: 20px !important;
+  }
+  .space-page .planet-card,
+  .space-page .mission-card,
+  .space-page .tech-card {
+    padding: 24px 20px !important;
+  }
+  .space-page .journey-line {
+    gap: 10px 12px !important;
+    font-size: 9px !important;
+  }
+  .space-page .timeline {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 12px !important;
+    margin-top: 34px !important;
+  }
+  .space-page .timeline div {
+    min-height: 0 !important;
+    padding: 12px 0 16px !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid rgba(103, 218, 255, 0.2) !important;
+  }
+  .space-page .space-cta > div:first-child,
+  .luxury-page .lux-cta .cta-scene {
+    height: min(78vw, 330px) !important;
+  }
+  .media-interlude .media-interlude-copy {
+    width: 88vw !important;
+    max-width: 88vw !important;
+    padding: 0 !important;
+  }
+  .media-interlude .media-interlude-copy h2 {
+    font-size: clamp(40px, 11vw, 62px) !important;
+    line-height: 0.9 !important;
+    overflow-wrap: anywhere;
+  }
+  .media-interlude .media-interlude-copy > p:last-child {
+    max-width: 38ch !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+
+  .route-screen,
+  .route-screen-earth {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 24px !important;
+    min-height: 0 !important;
+    padding: 70px 6vw !important;
+  }
+  .route-screen h1,
+  .route-screen h2,
+  .route-screen-earth .route-screen-content h1 {
+    font-size: clamp(40px, 11vw, 70px) !important;
+    line-height: 0.9 !important;
+    max-width: 100% !important;
+    overflow-wrap: anywhere;
+  }
+  .route-screen .route-screen-model,
+  .route-screen-earth .route-screen-model {
+    width: min(88vw, 420px) !important;
+    height: min(88vw, 420px) !important;
+    min-height: 0 !important;
+    margin: 0 auto !important;
+  }
+  .route-detail-strip {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .luxury-page .lux-nav-light .wordmark,
+  .space-page .space-nav .space-mark {
+    letter-spacing: 0.06em !important;
+    font-size: 11px !important;
+  }
+  .luxury-page .luxury-hero-heading {
+    font-size: clamp(40px, 12.5vw, 46px) !important;
+  }
+  .luxury-page .luxury-hero-video-slot {
+    width: 82px !important;
+    height: 48px !important;
+  }
+  .luxury-page .luxury-hero-media-line {
+    gap: 7px !important;
+  }
+  .luxury-page .collection-meter span {
+    display: none !important;
+  }
+  .luxury-page .collection-meter {
+    width: auto !important;
+  }
+  .luxury-page .image-reveal-section .reveal-progress span,
+  .space-page .image-reveal-section .reveal-progress span {
+    width: 12vw !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .luxury-page .luxury-hero-video-layer,
+  .luxury-page .luxury-hero-heading,
+  .luxury-page .luxury-hero-foot {
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* Section 04 / Current Works: increase the scroll runway so the horizontal rail moves less per viewport. */
+.luxury-page .lux-collection-motion {
+  height: 380svh !important;
+  min-height: 380svh !important;
+}
+.luxury-page .collection-track {
+  transition: none !important;
+}
+
+/* Shared scroll-driven material reveal — start completely hidden and reveal in step with scroll. */
+.luxury-page .image-reveal-section,
+.space-page .image-reveal-section {
+  height: 320svh !important;
+  min-height: 320svh !important;
+}
+.luxury-page .image-reveal-section .reveal-panel,
+.space-page .image-reveal-section .reveal-panel {
+  opacity: var(--reveal, 0) !important;
+  clip-path: inset(
+    calc((1 - var(--reveal, 0)) * 50%) 0
+    calc((1 - var(--reveal, 0)) * 50%) 0
+  ) !important;
+  transition: none !important;
+  will-change: transform, clip-path, opacity !important;
+}
+
+@media (max-width: 900px) {
+  .luxury-page .lux-collection-motion {
+    height: 320svh !important;
+    min-height: 320svh !important;
+  }
+  .luxury-page .image-reveal-section,
+  .space-page .image-reveal-section {
+    height: 290svh !important;
+    min-height: 290svh !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .luxury-page .image-reveal-section .reveal-panel,
+  .space-page .image-reveal-section .reveal-panel,
+  .luxury-page .image-reveal-section .reveal-panel-image,
+  .space-page .image-reveal-section .reveal-panel-image {
+    transition: none !important;
+  }
+}
+
+/* Mobile composition pass: preserve the desktop art direction while removing
+   excess vertical dead space and adding a real touch-friendly navigation drawer. */
+.mobile-menu-toggle,
+.signal-mobile {
+  display: none !important;
+}
+
+/* Lift the luxury headline and its inline film slightly within the first view. */
+
+
+@media (max-width: 760px) {
+  .luxury-page > .lux-nav.lux-nav-light,
+  .space-page > .space-nav {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    grid-template-rows: auto !important;
+    align-items: center !important;
+    min-height: 62px !important;
+    height: auto !important;
+    padding: 10px 5vw !important;
+    column-gap: 14px !important;
+    row-gap: 0 !important;
+    overflow: visible !important;
+    isolation: isolate;
+  }
+
+  .luxury-page .lux-nav-light .wordmark,
+  .space-page .space-nav .space-mark {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    justify-self: start !important;
+    max-width: 100% !important;
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.1em !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .mobile-menu-toggle {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    justify-self: end !important;
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    min-height: 42px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 1px solid rgba(145, 115, 72, 0.38) !important;
+    border-radius: 50% !important;
+    background: rgba(255, 252, 246, 0.78) !important;
+    color: #211b14 !important;
+    box-shadow: none !important;
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mobile-menu-toggle svg {
+    display: block !important;
+    width: 19px !important;
+    height: 19px !important;
+    stroke-width: 1.7 !important;
+  }
+
+  .luxury-page .lux-nav-light .nav-index {
+    display: none !important;
+  }
+
+  /* Hidden when closed; expanded as a full-width, scrollable drawer when opened. */
+  .luxury-page .lux-nav-light .lux-links,
+  .space-page .space-nav nav {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1001 !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    max-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 5vw !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(-8px) !important;
+    box-sizing: border-box !important;
+    transition:
+      max-height 360ms cubic-bezier(0.22, 1, 0.36, 1),
+      padding 300ms ease,
+      opacity 220ms ease,
+      transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+      visibility 220ms ease !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .luxury-page .lux-nav-light .lux-links {
+    background: rgba(248, 245, 238, 0.99) !important;
+    border-bottom: 1px solid rgba(24, 21, 18, 0.13) !important;
+    box-shadow: 0 18px 30px rgba(25, 18, 12, 0.11) !important;
+  }
+
+  .space-page .space-nav nav {
+    background: rgba(3, 7, 16, 0.99) !important;
+    border-bottom: 1px solid rgba(98, 234, 255, 0.23) !important;
+    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.28) !important;
+  }
+
+  .luxury-page .lux-nav-light .lux-links.is-open,
+  .space-page .space-nav nav.is-open {
+    max-height: min(72svh, 560px) !important;
+    padding: 8px 5vw 18px !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+
+  .luxury-page .lux-nav-light .lux-links a,
+  .space-page .space-nav nav > a {
+    display: block !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 15px 0 !important;
+    border-bottom: 1px solid rgba(145, 115, 72, 0.18) !important;
+    font-size: 11px !important;
+    line-height: 1.25 !important;
+    letter-spacing: 0.16em !important;
+    text-align: left !important;
+    white-space: normal !important;
+    text-decoration: none !important;
+  }
+
+  .luxury-page .lux-nav-light .lux-links a {
+    color: #211b14 !important;
+  }
+
+  .space-page .space-nav nav > a {
+    color: #e9faff !important;
+    border-bottom-color: rgba(98, 234, 255, 0.15) !important;
+  }
+
+  .space-page .space-nav .signal-desktop {
+    display: none !important;
+  }
+
+  .space-page .space-nav .signal-mobile {
+    display: none !important;
+    align-self: flex-start !important;
+    margin-top: 14px !important;
+    max-width: 100% !important;
+    min-height: 38px !important;
+    padding: 0 14px !important;
+    font-size: 9px !important;
+    letter-spacing: 0.13em !important;
+    cursor: pointer !important;
+  }
+
+  .space-page .space-nav nav.is-open .signal-mobile {
+    display: inline-flex !important;
+  }
+
+  /* Bring the luxury headline and inline video away from the lower edge. */
+
+
+
+
+  .luxury-page .luxury-hero-heading {
+    left: 5vw !important;
+    right: 5vw !important;
+    font-size: clamp(44px, 12vw, 64px) !important;
+    line-height: 0.86 !important;
+  }
+
+
+
+  /* Current Works: move the card rail closer to its heading on phones. */
+  .luxury-page .lux-collection-motion {
+    height: 320svh !important;
+    min-height: 320svh !important;
+  }
+
+  .luxury-page .collection-title {
+    top: 5svh !important;
+  }
+
+  .luxury-page .collection-title h2 {
+    margin-top: 8px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .luxury-page .collection-title p:last-child {
+    max-width: 33ch !important;
+  }
+
+  .luxury-page .collection-track {
+    top: 37svh !important;
+    height: 34svh !important;
+  }
+
+  .luxury-page .collection-card {
+    height: 34svh !important;
+  }
+
+  /* Shared Material Weather section: start the image grid closer to the copy. */
+  .luxury-page .image-reveal-section,
+  .space-page .image-reveal-section {
+    height: 290svh !important;
+    min-height: 290svh !important;
+  }
+
+  .luxury-page .image-reveal-section .reveal-title,
+  .space-page .image-reveal-section .reveal-title {
+    top: 4svh !important;
+  }
+
+  .luxury-page .image-reveal-section .reveal-panels,
+  .space-page .image-reveal-section .reveal-panels {
+    top: 34svh !important;
+    bottom: 16svh !important;
+    gap: 8px !important;
+  }
+
+  /* Luxury process cards need real inner padding on phone-sized viewports. */
+  .luxury-page .lux-chapters .scene-chapter {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 22px 20px !important;
+    gap: 26px !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .luxury-page .lux-chapters .scene-chapter > div {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .luxury-page .lux-chapters .scene-chapter h3,
+  .luxury-page .lux-chapters .scene-chapter p:last-child {
+    max-width: 100% !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  /* Tighten mobile Space hero composition without changing its desktop layout. */
+  .space-page .space-hero {
+    height: clamp(560px, calc(100svh - 62px), 700px) !important;
+    min-height: clamp(560px, calc(100svh - 62px), 700px) !important;
+  }
+
+  .space-page .space-hero-minimal {
+    top: 42px !important;
+    left: 5vw !important;
+    width: 90vw !important;
+    max-width: 90vw !important;
+  }
+
+  .space-page .space-hero-minimal h1 {
+    font-size: clamp(48px, 12vw, 72px) !important;
+    line-height: 0.88 !important;
+  }
+
+  .space-page .space-hero > .scene-deferred {
+    top: 48% !important;
+    height: min(47svh, 350px) !important;
+    transform: translateY(-20%) !important;
+  }
+
+  .route-screen,
+  .route-screen-earth {
+    padding-top: 52px !important;
+    padding-bottom: 56px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .mobile-menu-toggle {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+  }
+
+  .luxury-page .luxury-hero-heading {
+    font-size: clamp(41px, 11.8vw, 46px) !important;
+  }
+
+  .luxury-page .collection-title h2 {
+    font-size: clamp(43px, 11.6vw, 50px) !important;
+  }
+
+  .luxury-page .lux-chapters .scene-chapter {
+    padding: 20px 16px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .space-page .mobile-menu-toggle-space {
+    border-color: rgba(98, 234, 255, 0.34) !important;
+    background: rgba(3, 7, 16, 0.9) !important;
+    color: #e9faff !important;
+    box-shadow: 0 0 22px rgba(98, 234, 255, 0.08) !important;
+  }
+}
+
+/* V6 corrections: keep the existing one-project route structure and visual language. */
+.luxury-page .luxury-hero-reveal {
+
+  margin-block: 0 !important;
+}
+
+
+
+/* Strong foreground/background contrast for the contact-page return action. */
+.luxury-page .route-screen-contact .route-actions .lux-button {
+  color: #241b10 !important;
+  background: #f4eadb !important;
+  border: 1px solid #e3bd7b !important;
+  text-shadow: none !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24) !important;
+  backdrop-filter: none !important;
+}
+.luxury-page .route-screen-contact .route-actions .lux-button:hover {
+  color: #21170b !important;
+  background: #ddb66d !important;
+  border-color: #f2d49a !important;
+}
+
+/* Keep the reveal heading fixed while only the image panels respond to scroll. */
+.luxury-page .image-reveal-section .reveal-title,
+.space-page .image-reveal-section .reveal-title {
+  transform: none !important;
+  opacity: 1 !important;
+  will-change: auto !important;
+}
+
+@media (max-width: 760px) {
+  /* Shorter pinned runway, upward headline placement, and no oversized dead space. */
+
+
+  .luxury-page .luxury-hero-heading {
+    font-size: clamp(42px, 11.8vw, 64px) !important;
+    line-height: 0.86 !important;
+  }
+
+
+  /* Current Works: tighten the top rhythm and bring the image rail closer to copy. */
+  .luxury-page .collection-topline {
+    top: 16px !important;
+    left: 5vw !important;
+    right: 5vw !important;
+  }
+  .luxury-page .collection-title {
+    top: clamp(48px, 6svh, 62px) !important;
+    transform: none !important;
+  }
+  .luxury-page .collection-track {
+    top: 43svh !important;
+  }
+
+  /* Process cards should flow with their copy, not reserve a tall empty media area. */
+  .luxury-page .lux-chapters {
+    padding-top: 58px !important;
+    padding-bottom: 64px !important;
+  }
+  .luxury-page .lux-chapters .chapter-stack {
+    margin-top: 24px !important;
+    gap: 12px !important;
+  }
+  .luxury-page .lux-chapters .scene-chapter {
+    min-height: 0 !important;
+    height: auto !important;
+    justify-content: flex-start !important;
+    gap: 22px !important;
+    padding: 22px 20px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .luxury-page .luxury-hero-heading {
+    font-size: clamp(40px, 11.8vw, 45px) !important;
+  }
+  .luxury-page .lux-chapters .scene-chapter {
+    padding: 20px 16px !important;
+    gap: 18px !important;
+  }
+}
+
+
+/* Cinematic video refresh — show the actual film, keep stills as load fallbacks. */
+.media-interlude-luxury .media-interlude-image {
+  opacity: 0.22 !important;
+  filter: saturate(0.9) contrast(1.08) brightness(0.68) !important;
+}
+.media-interlude-luxury .media-interlude-video {
+  opacity: 0.62 !important;
+  mix-blend-mode: normal !important;
+  filter: saturate(0.96) contrast(1.08) brightness(0.78) !important;
+}
+.media-interlude-space .media-interlude-image {
+  opacity: 0.2 !important;
+  filter: saturate(1.05) contrast(1.08) brightness(0.78) !important;
+}
+.media-interlude-space .media-interlude-video {
+  opacity: 0.64 !important;
+  mix-blend-mode: screen !important;
+  filter: saturate(1.16) contrast(1.08) brightness(0.82) !important;
+}
+
+/* =====================================================================
+   Final targeted fixes from the v7 review.
+   Keep the existing implementation; these rules normalize the contradictory
+   historic hero overrides and make route actions readable on image backgrounds.
+   ===================================================================== */
+
+/* The hero transition owns its scroll runway. Disable the site's global mandatory
+   section snapping on the Luxury page so snapping cannot expose the next section
+   before the pinned video reaches the full-frame state. */
+html:has(.luxury-page) {
+  scroll-snap-type: none !important;
+  overscroll-behavior-y: auto !important;
+}
+.luxury-page > section,
+.luxury-page > footer {
+  scroll-snap-align: none !important;
+  scroll-snap-stop: normal !important;
+}
+
+.luxury-page .luxury-hero-reveal {
+  position: relative !important;
+  height: 190svh !important;
+  min-height: 190svh !important;
+  margin-block: 0 !important;
+  padding: 0 !important;
+  overflow: clip !important;
+}
+.luxury-page .luxury-hero-stage {
+  position: sticky !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 100svh !important;
+  min-height: 0 !important;
+  max-height: 100svh !important;
+  overflow: hidden !important;
+}
+.luxury-page .luxury-hero-heading {
+  top: 34% !important;
+  left: clamp(22px, 5vw, 72px) !important;
+  right: clamp(22px, 5vw, 72px) !important;
+  transform: translateY(-50%) !important;
+}
+.luxury-page .luxury-hero-foot {
+  top: 62% !important;
+  bottom: auto !important;
+  left: clamp(22px, 5vw, 72px) !important;
+  right: clamp(22px, 5vw, 72px) !important;
+  margin: 0 !important;
+}
+
+/* The story text becomes a purposeful, wider editorial column once its decorative
+   09 orbit is removed from the JSX. */
+.luxury-page .lux-story {
+  min-height: 0 !important;
+  padding-block: clamp(64px, 9svh, 120px) !important;
+}
+.luxury-page .lux-story .story-grid {
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 0 !important;
+}
+.luxury-page .lux-story .story-grid > div:first-child {
+  width: 100% !important;
+  max-width: min(100%, 1040px) !important;
+}
+
+/* All Luxury return buttons get an opaque, high-contrast surface—not only Contact. */
+.luxury-page .route-screen .route-actions,
+.space-page .route-screen .route-actions {
+  opacity: 1 !important;
+}
+.luxury-page .route-screen .route-actions > .lux-button {
+  color: #241b10 !important;
+  background: #f4eadb !important;
+  border: 1px solid #d8ad68 !important;
+  text-shadow: none !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22) !important;
+  backdrop-filter: none !important;
+  opacity: 1 !important;
+  isolation: isolate !important;
+}
+.luxury-page .route-screen .route-actions > .lux-button:hover {
+  color: #21170b !important;
+  background: #ddb66d !important;
+  border-color: #f2d49a !important;
+}
+.space-page .route-screen .route-actions > .space-button {
+  color: #07141c !important;
+  background: #dffaff !important;
+  border: 1px solid #62eaff !important;
+  text-shadow: none !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3) !important;
+  opacity: 1 !important;
+  isolation: isolate !important;
+}
+.space-page .route-screen .route-actions > .space-button:hover {
+  color: #041019 !important;
+  background: #75edff !important;
+  border-color: #b3f7ff !important;
+}
+
+@media (max-width: 760px) {
+  /* Compact the hero text/video/supporting copy on phone-sized viewports. */
+  .luxury-page .luxury-hero-reveal {
+    height: 190svh !important;
+    min-height: 190svh !important;
+  }
+  .luxury-page .luxury-hero-stage {
+    height: 100svh !important;
+    min-height: 0 !important;
+    max-height: 100svh !important;
+  }
+  .luxury-page .luxury-hero-heading {
+    top: 28% !important;
+    left: 5vw !important;
+    right: 5vw !important;
+    font-size: clamp(43px, 12vw, 66px) !important;
+    line-height: 0.86 !important;
+    letter-spacing: -0.065em !important;
+  }
+  .luxury-page .luxury-hero-media-line {
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  .luxury-page .luxury-hero-video-slot {
+    width: clamp(88px, 27vw, 132px) !important;
+    height: clamp(50px, 15vw, 76px) !important;
+    flex: 0 0 auto !important;
+  }
+  .luxury-page .luxury-hero-foot {
+    top: 53% !important;
+    bottom: auto !important;
+    left: 5vw !important;
+    right: 5vw !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+  }
+  .luxury-page .luxury-hero-foot > p {
+    width: 100% !important;
+    max-width: 34ch !important;
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+  }
+  .luxury-page .luxury-hero-foot a {
+    font-size: 8px !important;
+    letter-spacing: 0.14em !important;
+  }
+
+  /* Current Works cards start shortly after the copy, below the sticky nav. */
+  .luxury-page .collection-title {
+    top: clamp(72px, 9.5svh, 88px) !important;
+    left: 5vw !important;
+    width: 90vw !important;
+  }
+  .luxury-page .collection-title h2 {
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+  }
+  .luxury-page .collection-title p:last-child {
+    max-width: 34ch !important;
+    font-size: 12px !important;
+    line-height: 1.36 !important;
+  }
+  .luxury-page .collection-track {
+    top: 35svh !important;
+    height: 34svh !important;
+  }
+  .luxury-page .collection-card {
+    height: 34svh !important;
+  }
+
+  .luxury-page .lux-story {
+    min-height: 0 !important;
+    padding-block: clamp(48px, 7svh, 68px) !important;
+  }
+  .luxury-page .lux-story .story-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 0 !important;
+  }
+}
+
+
+/* =====================================================================
+   V7 FOLLOW-UP — balanced phone hero, true full-bleed film, direction-aware nav
+   ===================================================================== */
+
+/* Full-bleed film chapters must extend to both viewport edges. A previous
+   wrapper width left a strip of the page background visible on the right. */
+.luxury-page > .media-interlude,
+.space-page > .media-interlude {
+  position: relative !important;
+  left: 50% !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+  padding-inline: 0 !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+/* Fixed site navigation follows the real scroll direction: hide on downward
+   travel and return immediately on upward travel, like the reference behavior. */
+.lux-nav,
+.space-nav {
+  transform: translate3d(0, 0, 0) !important;
+  transition: transform 420ms cubic-bezier(.22, 1, .36, 1),
+              background 300ms ease,
+              border-color 300ms ease,
+              box-shadow 300ms ease !important;
+  will-change: transform;
+}
+html[data-nav-hidden="true"] .lux-nav,
+html[data-nav-hidden="true"] .space-nav {
+  transform: translate3d(0, calc(-100% - 12px), 0) !important;
+  pointer-events: none !important;
+}
+html:not([data-nav-hidden="true"]) .lux-nav,
+html:not([data-nav-hidden="true"]) .space-nav {
+  pointer-events: auto !important;
+}
+
+/* Keep the hero content as a compact editorial group at phone sizes. The pinned
+   stage remains viewport-height so the video can still grow to a true full-screen. */
+@media (max-width: 760px) {
+  .luxury-page .luxury-hero-topline {
+    inset: 16px 5vw auto !important;
+    gap: 12px !important;
+    font-size: 8px !important;
+    letter-spacing: .16em !important;
+  }
+  .luxury-page .luxury-hero-heading {
+    top: 22% !important;
+    left: 5vw !important;
+    right: 5vw !important;
+    font-size: clamp(45px, 13.2vw, 54px) !important;
+    line-height: .86 !important;
+    letter-spacing: -.065em !important;
+  }
+  .luxury-page .luxury-hero-media-line {
+    gap: 8px !important;
+    align-items: center !important;
+  }
+  .luxury-page .luxury-hero-video-slot {
+    width: clamp(86px, 26vw, 112px) !important;
+    height: clamp(50px, 14.5vw, 64px) !important;
+  }
+  .luxury-page .luxury-hero-foot {
+    top: 42% !important;
+    left: 5vw !important;
+    right: 5vw !important;
+    gap: 10px !important;
+  }
+  .luxury-page .luxury-hero-foot > p {
+    max-width: 32ch !important;
+    font-size: 12px !important;
+    line-height: 1.42 !important;
+  }
+  .luxury-page .luxury-hero-foot a {
+    margin-top: 0 !important;
+    font-size: 8px !important;
+    line-height: 1.2 !important;
+    letter-spacing: .14em !important;
+  }
+}
+
+@media (min-width: 761px) {
+  .luxury-page .luxury-hero-heading {
+    top: 31% !important;
+  }
+  .luxury-page .luxury-hero-foot {
+    top: 57% !important;
+  }
+}
+
+
+/* =====================================================================
+   V8 — coordinated hero scroll, balanced composition, full-bleed film, nav
+   These final rules intentionally override older layered responsive patches.
+   ===================================================================== */
+
+/* The header must be out of document flow on every screen. That lets the first
+   scroll gesture hide it while the inline hero film begins expanding immediately. */
+.luxury-page > .lux-nav.lux-nav-light,
+.space-page > .space-nav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  z-index: 1000 !important;
+  box-sizing: border-box !important;
+  transform: translate3d(0, 0, 0) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition:
+    transform 800ms cubic-bezier(.22, 1, .36, 1),
+    opacity 550ms ease,
+    background 300ms ease,
+    border-color 300ms ease,
+    box-shadow 300ms ease !important;
+  will-change: transform, opacity;
+}
+html[data-nav-hidden="true"] .luxury-page > .lux-nav.lux-nav-light,
+html[data-nav-hidden="true"] .space-page > .space-nav {
+  transform: translate3d(0, calc(-100% - 3px), 0) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+html:not([data-nav-hidden="true"]) .luxury-page > .lux-nav.lux-nav-light,
+html:not([data-nav-hidden="true"]) .space-page > .space-nav {
+  transform: translate3d(0, 0, 0) !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* Full-bleed interludes should match the actual content viewport. Using 100vw
+   inside a clipped main can include the scrollbar and create the visible strip. */
+.luxury-page > .media-interlude,
+.space-page > .media-interlude {
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  margin-inline: 0 !important;
+  padding-inline: 0 !important;
+  transform: none !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+.luxury-page > .media-interlude .media-interlude-image,
+.luxury-page > .media-interlude .media-interlude-video,
+.space-page > .media-interlude .media-interlude-image,
+.space-page > .media-interlude .media-interlude-video {
+  inset: -6% !important;
+  width: 112% !important;
+  height: 112% !important;
+  max-width: none !important;
+  object-fit: cover !important;
+}
+
+/* Keep one pinned viewport stage, with the page-scroll runway used only to grow
+   the video frame. The wheel/touch gate in LuxuryHero clamps motion to this runway. */
+.luxury-page .luxury-hero-reveal {
+  position: relative !important;
+  height: 190svh !important;
+  min-height: 190svh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: clip !important;
+  isolation: isolate !important;
+}
+.luxury-page .luxury-hero-stage {
+  position: sticky !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 100svh !important;
+  min-height: 100svh !important;
+  max-height: 100svh !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+}
+.luxury-page .luxury-hero-topline {
+  top: calc(var(--site-nav-height, 72px) + clamp(16px, 3vh, 28px)) !important;
+  left: clamp(22px, 5vw, 72px) !important;
+  right: clamp(22px, 5vw, 72px) !important;
+  inset-inline: clamp(22px, 5vw, 72px) !important;
+  z-index: 5 !important;
+}
+.luxury-page .luxury-hero-content {
+  position: absolute !important;
+  top: clamp(215px, 30svh, 300px) !important;
+  left: clamp(22px, 5vw, 72px) !important;
+  right: clamp(22px, 5vw, 72px) !important;
+  width: auto !important;
+  max-width: 1480px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: clamp(22px, 3.2svh, 34px) !important;
+  z-index: 4 !important;
+  pointer-events: none !important;
+}
+.luxury-page .luxury-hero-heading {
+  position: relative !important;
+  inset: auto !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  width: 100% !important;
+  max-width: 1480px !important;
+  margin: 0 !important;
+  transform: none !important;
+  font-size: clamp(72px, 11.4vw, 180px) !important;
+  line-height: .78 !important;
+  letter-spacing: -.075em !important;
+  z-index: 4 !important;
+  pointer-events: none !important;
+}
+.luxury-page .luxury-hero-media-line {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  gap: clamp(10px, 1.5vw, 24px) !important;
+  width: max-content !important;
+  max-width: 100% !important;
+}
+.luxury-page .luxury-hero-video-slot {
+  width: clamp(190px, 22vw, 360px) !important;
+  height: clamp(100px, 11vw, 184px) !important;
+  max-width: 100% !important;
+  flex: 0 0 auto !important;
+}
+.luxury-page .luxury-hero-foot {
+  position: relative !important;
+  inset: auto !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  width: 100% !important;
+  max-width: none !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-end !important;
+  justify-content: space-between !important;
+  gap: clamp(18px, 3vw, 34px) !important;
+  margin: 0 !important;
+  pointer-events: auto !important;
+}
+.luxury-page .luxury-hero-foot > p {
+  width: min(470px, 64%) !important;
+  max-width: 470px !important;
+  margin: 0 !important;
+  font-size: clamp(14px, 1.1vw, 16px) !important;
+  line-height: 1.48 !important;
+}
+.luxury-page .luxury-hero-foot > a {
+  flex: 0 0 auto !important;
+  margin: 0 0 2px auto !important;
+  white-space: nowrap !important;
+}
+
+/* Tablet and phone: a single compact editorial group avoids the previous split
+   between a high headline and a low paragraph. The image-slot sizing is retained. */
+@media (max-width: 900px) {
+  .luxury-page .luxury-hero-content {
+    top: clamp(235px, 35svh, 300px) !important;
+    left: 5vw !important;
+    right: 5vw !important;
+    gap: clamp(18px, 2.8svh, 28px) !important;
+  }
+  .luxury-page .luxury-hero-heading {
+    font-size: clamp(54px, 10.8vw, 98px) !important;
+    line-height: .84 !important;
+    letter-spacing: -.07em !important;
+  }
+  .luxury-page .luxury-hero-video-slot {
+    width: clamp(124px, 22vw, 200px) !important;
+    height: clamp(66px, 12vw, 108px) !important;
+  }
+}
+@media (max-width: 760px) {
+  .luxury-page > .lux-nav.lux-nav-light,
+  .space-page > .space-nav {
+    position: fixed !important;
+    min-height: 62px !important;
+    height: auto !important;
+    padding: 10px 5vw !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    grid-template-rows: auto !important;
+  }
+  .luxury-page .luxury-hero-topline {
+    top: calc(var(--site-nav-height, 62px) + 10px) !important;
+    left: 5vw !important;
+    right: 5vw !important;
+    font-size: 8px !important;
+    letter-spacing: .16em !important;
+  }
+  .luxury-page .luxury-hero-content {
+    top: clamp(220px, 35svh, 282px) !important;
+    left: 5vw !important;
+    right: 5vw !important;
+    gap: clamp(16px, 2.4svh, 22px) !important;
+  }
+  .luxury-page .luxury-hero-heading {
+    font-size: clamp(40px, 11.8vw, 48px) !important;
+    line-height: .86 !important;
+    letter-spacing: -.065em !important;
+  }
+  .luxury-page .luxury-hero-media-line {
+    gap: 8px !important;
+    align-items: center !important;
+  }
+  .luxury-page .luxury-hero-video-slot {
+    width: clamp(86px, 26vw, 112px) !important;
+    height: clamp(50px, 14.5vw, 64px) !important;
+  }
+  .luxury-page .luxury-hero-foot {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+  .luxury-page .luxury-hero-foot > p {
+    width: 100% !important;
+    max-width: 34ch !important;
+    font-size: 12.5px !important;
+    line-height: 1.42 !important;
+  }
+  .luxury-page .luxury-hero-foot > a {
+    margin: 2px 0 0 !important;
+    font-size: 8px !important;
+    letter-spacing: .14em !important;
+  }
+
+  /* Current Works: keep its horizontal transform/progress unchanged, but move
+     the card rail close enough to follow the title and supporting copy. */
+  .luxury-page .collection-title {
+    top: clamp(48px, 6svh, 62px) !important;
+    left: 5vw !important;
+    width: 90vw !important;
+    transform: none !important;
+  }
+  .luxury-page .collection-title h2 {
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+  }
+  .luxury-page .collection-title p:last-child {
+    max-width: 34ch !important;
+    font-size: 12px !important;
+    line-height: 1.36 !important;
+  }
+  .luxury-page .collection-track {
+    top: 32svh !important;
+    height: 34svh !important;
+  }
+  .luxury-page .collection-card {
+    height: 34svh !important;
+  }
+
+  /* A fixed mobile header no longer leaves a sticky element's blank flow slot. */
+  .luxury-page .route-screen,
+  .space-page .route-screen {
+    padding-top: clamp(82px, 12svh, 108px) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lux-nav,
+  .space-nav {
+    transition-duration: .01ms !important;
+  }
+}
+
+/* LUXURY HEADER FINAL TREATMENT — match the warm ivory overview header on every route.
+   Deliberately scoped to Luxury; Space navigation remains unchanged. */
+.luxury-page > .lux-nav.lux-nav-light {
+  background: #f0ebe1 !important;
+  border: 0 !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
